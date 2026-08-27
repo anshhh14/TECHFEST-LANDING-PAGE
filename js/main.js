@@ -1,10 +1,5 @@
-// Techfest landing page
-// Handles: starfield backdrop, countdown clock, header state,
-// mobile nav, scroll reveals, animated telemetry counters, form demo.
-
 document.getElementById('year').textContent = new Date().getFullYear();
 
-/* ---------------- starfield ---------------- */
 (function starfield() {
   const canvas = document.getElementById('stars');
   const ctx = canvas.getContext('2d');
@@ -50,13 +45,11 @@ document.getElementById('year').textContent = new Date().getFullYear();
   draw();
 })();
 
-/* ---------------- header scroll state ---------------- */
 const header = document.getElementById('siteHeader');
 window.addEventListener('scroll', () => {
   header.classList.toggle('scrolled', window.scrollY > 40);
 }, { passive: true });
 
-/* ---------------- mobile nav ---------------- */
 const navToggle = document.getElementById('navToggle');
 const mainNav = document.getElementById('mainNav');
 navToggle.addEventListener('click', () => {
@@ -67,8 +60,6 @@ mainNav.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', () => mainNav.classList.remove('open'));
 });
 
-/* ---------------- countdown ---------------- */
-// opening ceremony — adjust this whenever next year's dates are locked
 const LAUNCH_DATE = new Date('2026-12-12T09:00:00+05:30').getTime();
 
 function tickCountdown() {
@@ -89,7 +80,7 @@ function tickCountdown() {
 tickCountdown();
 setInterval(tickCountdown, 1000);
 
-/* ---------------- scroll reveal ---------------- */
+
 const revealTargets = document.querySelectorAll(
   '.about-inner, .events h2, .module, .schedule h2, .tl-item, .speakers h2, .speaker-card, .register-inner'
 );
@@ -106,10 +97,10 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 revealTargets.forEach(el => revealObserver.observe(el));
 
-/* ---------------- telemetry counters ---------------- */
+
 function formatCount(value, el) {
   if (el.classList.contains('money')) {
-    // show as ₹ lakh for the prize pool, feels more native than a raw number
+
     return '₹' + (value / 100000).toFixed(0) + 'L+';
   }
   return value.toLocaleString('en-IN') + (value >= 100 ? '+' : '');
@@ -146,12 +137,10 @@ if (console_) {
   counterObserver.observe(console_);
 }
 
-/* ---------------- scroll cue ---------------- */
 document.getElementById('scrollCue').addEventListener('click', () => {
   document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
 });
 
-/* ---------------- register form (demo only) ---------------- */
 const registerForm = document.getElementById('registerForm');
 const formNote = document.getElementById('formNote');
 registerForm.addEventListener('submit', (e) => {

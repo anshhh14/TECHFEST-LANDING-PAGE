@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Techfest — Mission Control for India's Biggest Science &amp; Tech Festival</title>
+  <meta name="description" content="Techfest is Asia's largest science and technology festival. 72 hours, 150+ events, thousands of builders. Register now.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- decorative starfield canvas, sits behind everything in the hero -->
+  <canvas id="stars"></canvas>
+
+  <div class="scan-line" aria-hidden="true"></div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="wrap header-inner">
+      <a href="#top" class="logo" aria-label="Techfest home">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 1.5 L27.5 8.5 V21.5 L15 28.5 L2.5 21.5 V8.5 Z" stroke="var(--amber)" stroke-width="1.6"/>
+          <path d="M15 1.5 V28.5 M2.5 8.5 L27.5 21.5 M27.5 8.5 L2.5 21.5" stroke="var(--cyan)" stroke-width="0.7" opacity="0.5"/>
+          <circle cx="15" cy="15" r="3.2" fill="var(--amber)"/>
+        </svg>
+        <span>TECHFEST</span>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#about">About</a>
+        <a href="#events">Events</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#speakers">Guests</a>
+        <a href="#sponsors">Partners</a>
+        <a href="#register" class="nav-cta">Get a pass</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ================= HERO / MISSION CONSOLE ================= -->
+    <section class="hero">
+      <div class="wrap hero-inner">
+
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="dot pulse"></span>Systems nominal — registrations open</p>
+          <h1>Asia's largest science &amp; technology festival returns to launch.</h1>
+          <p class="hero-lede">
+            Three days. One campus. Robots that walk, rockets that (mostly) fly, hackers who don't sleep,
+            and the kind of ideas that don't fit in a slide deck. Techfest is where India's builders
+            come to find out what they're actually capable of.
+          </p>
+          <div class="hero-actions">
+            <a href="#register" class="btn btn-primary">Reserve your pass</a>
+            <a href="#events" class="btn btn-ghost">See what's on <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+
+        <div class="console" role="group" aria-label="Countdown to Techfest">
+          <div class="console-head">
+            <span class="console-title">// mission_clock.log</span>
+            <span class="console-light" aria-hidden="true"></span>
+          </div>
+
+          <div class="countdown" id="countdown">
+            <div class="ctime"><span id="cd-days">--</span><label>days</label></div>
+            <div class="csep">:</div>
+            <div class="ctime"><span id="cd-hours">--</span><label>hrs</label></div>
+            <div class="csep">:</div>
+            <div class="ctime"><span id="cd-mins">--</span><label>min</label></div>
+            <div class="csep">:</div>
+            <div class="ctime"><span id="cd-secs">--</span><label>sec</label></div>
+          </div>
+
+          <p class="console-sub">T-minus to opening ceremony · IIT Bombay campus</p>
+
+          <div class="console-grid">
+            <div><span class="k">EVENTS</span><span class="v" data-count="150">0</span></div>
+            <div><span class="k">FOOTFALL</span><span class="v" data-count="180000">0</span></div>
+            <div><span class="k">NATIONS</span><span class="v" data-count="45">0</span></div>
+            <div><span class="k">PRIZE POOL</span><span class="v money" data-count="6000000">₹0</span></div>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="scroll-cue" id="scrollCue" aria-label="Scroll down">
+        <span></span>
+      </button>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="about" id="about">
+      <div class="wrap about-inner">
+        <p class="section-tag">01 · Briefing</p>
+        <h2>Not a conference. A campus that runs on adrenaline for 72 hours straight.</h2>
+        <p class="about-body">
+          Techfest started as a handful of engineering students trying to prove a point about what
+          a student-run festival could look like. It's grown into the kind of event where a
+          fifteen-year-old's robotics prototype ends up in the same hall as a fireside chat with
+          a space-agency scientist — and nobody finds that strange anymore. Every corridor is a
+          different discipline: aerial robotics on one side, a 48-hour hackathon on the other,
+          a planetarium dome pitched on the lawn in between.
+        </p>
+        <div class="about-stats">
+          <div><strong>27+</strong><span>years running</span></div>
+          <div><strong>150+</strong><span>events &amp; competitions</span></div>
+          <div><strong>60+</strong><span>countries represented</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EVENTS / SYSTEM MODULES ================= -->
+    <section class="events" id="events">
+      <div class="wrap">
+        <p class="section-tag">02 · Systems online</p>
+        <h2>Pick your discipline. Or don't — most people wander into three.</h2>
+
+        <div class="module-grid">
+
+          <article class="module">
+            <div class="module-top">
+              <span class="status-light on"></span>
+              <span class="module-code">SYS/01</span>
+            </div>
+            <svg class="module-icon" viewBox="0 0 48 48" fill="none"><rect x="12" y="18" width="24" height="20" rx="3" stroke="currentColor" stroke-width="1.8"/><circle cx="19" cy="27" r="2.3" fill="currentColor"/><circle cx="29" cy="27" r="2.3" fill="currentColor"/><path d="M24 18V10M18 10h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M14 38v3M34 38v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <h3>Robotics Arena</h3>
+            <p>Build-and-battle rounds, line-followers, and a combat bracket that gets loud enough to need earplugs.</p>
+            <a href="#" class="module-link">View brackets →</a>
+          </article>
+
+          <article class="module">
+            <div class="module-top">
+              <span class="status-light on"></span>
+              <span class="module-code">SYS/02</span>
+            </div>
+            <svg class="module-icon" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="15" stroke="currentColor" stroke-width="1.8"/><path d="M24 16v8l6 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="24" r="2" fill="currentColor"/></svg>
+            <h3>Hack the Node — 36hr</h3>
+            <p>No pre-built projects, no mercy on the judging panel. Ship something real before sunrise, twice.</p>
+            <a href="#" class="module-link">Read the rules →</a>
+          </article>
+
+          <article class="module">
+            <div class="module-top">
+              <span class="status-light on"></span>
+              <span class="module-code">SYS/03</span>
+            </div>
+            <svg class="module-icon" viewBox="0 0 48 48" fill="none"><path d="M24 6l4.5 9.2L38 16.6l-7 6.9 1.6 9.6L24 28.4l-8.6 4.7 1.6-9.6-7-6.9 9.5-1.4L24 6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M24 34v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <h3>Astronomy Night</h3>
+            <p>Rooftop telescopes, a dome projection, and a scientist who will happily argue about Pluto with you.</p>
+            <a href="#" class="module-link">Check the sky map →</a>
+          </article>
+
+          <article class="module">
+            <div class="module-top">
+              <span class="status-light warn"></span>
+              <span class="module-code">SYS/04</span>
+            </div>
+            <svg class="module-icon" viewBox="0 0 48 48" fill="none"><path d="M24 8 12 15v18l12 7 12-7V15L24 8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M24 8v34M12 15l12 7 12-7" stroke="currentColor" stroke-width="1.8"/></svg>
+            <h3>Design Sprint</h3>
+            <p>A brief drops at 9am, a working prototype is due by 9pm. Product thinking, under a clock.</p>
+            <a href="#" class="module-link">See last year's brief →</a>
+          </article>
+
+          <article class="module">
+            <div class="module-top">
+              <span class="status-light on"></span>
+              <span class="module-code">SYS/05</span>
+            </div>
+            <svg class="module-icon" viewBox="0 0 48 48" fill="none"><rect x="8" y="12" width="32" height="20" rx="2.5" stroke="currentColor" stroke-width="1.8"/><path d="M16 38h16M24 32v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M15 22l4 4 4-4M25 20l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <h3>LAN &amp; Esports Arena</h3>
+            <p>A proper bracket, proper hardware, and a crowd loud enough to rattle the projector.</p>
+            <a href="#" class="module-link">Register a squad →</a>
+          </article>
+
+          <article class="module">
+            <div class="module-top">
+              <span class="status-light on"></span>
+              <span class="module-code">SYS/06</span>
+            </div>
+            <svg class="module-icon" viewBox="0 0 48 48" fill="none"><path d="M24 6c6 6 9 12 9 18a9 9 0 1 1-18 0c0-6 3-12 9-18z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M24 34v8m-6 0h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <h3>Rocketry &amp; Aeromodelling</h3>
+            <p>Static-fire tests, payload drops, and a launch field that's seen more failures than successes — that's the point.</p>
+            <a href="#" class="module-link">Launch schedule →</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SCHEDULE ================= -->
+    <section class="schedule" id="schedule">
+      <div class="wrap">
+        <p class="section-tag">03 · Flight plan</p>
+        <h2>Three days, roughly in order.</h2>
+
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-marker"><span>Day 1</span></div>
+            <div class="tl-body">
+              <h3>Ignition</h3>
+              <p>Opening ceremony, campus tours, hackathon kickoff, and the first robotics qualifiers. Most people spend the evening just figuring out where everything is.</p>
+              <span class="tl-time">09:00 — 23:00</span>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-marker"><span>Day 2</span></div>
+            <div class="tl-body">
+              <h3>Peak burn</h3>
+              <p>Finals across most competitive events, the design sprint deadline, guest talks back-to-back, and the astronomy dome open past midnight.</p>
+              <span class="tl-time">08:00 — 02:00</span>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-marker"><span>Day 3</span></div>
+            <div class="tl-body">
+              <h3>Re-entry</h3>
+              <p>Hackathon demos, closing bracket for the robotics arena, awards, and a closing show that empties out the whole campus onto one lawn.</p>
+              <span class="tl-time">09:00 — 22:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SPEAKERS ================= -->
+    <section class="speakers" id="speakers">
+      <div class="wrap">
+        <p class="section-tag">04 · Transmissions</p>
+        <h2>People worth clearing your schedule for.</h2>
+
+        <div class="speaker-grid">
+          <div class="speaker-card">
+            <div class="speaker-photo" data-initials="AR"></div>
+            <h3>Dr. Anika Rao</h3>
+            <span>Mission systems, ISRO-affiliated lab</span>
+          </div>
+          <div class="speaker-card">
+            <div class="speaker-photo" data-initials="MK"></div>
+            <h3>Marcus Kessler</h3>
+            <span>Founding engineer, autonomous flight startup</span>
+          </div>
+          <div class="speaker-card">
+            <div class="speaker-photo" data-initials="SP"></div>
+            <h3>Sana Patel</h3>
+            <span>Robotics researcher &amp; competition judge</span>
+          </div>
+          <div class="speaker-card">
+            <div class="speaker-photo" data-initials="JL"></div>
+            <h3>Jian Liu</h3>
+            <span>Hardware lead, open-source satellite project</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SPONSORS ================= -->
+    <section class="sponsors" id="sponsors">
+      <div class="wrap">
+        <p class="section-tag">05 · Ground support</p>
+        <h2>Backed by teams who build things for a living.</h2>
+      </div>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>ORBITAL DYNAMICS</span><span>NORTHSTAR LABS</span><span>FERROX</span><span>DELTA-V</span><span>QUANTA</span><span>HELIX SYSTEMS</span><span>VANTAGE</span>
+          <span>ORBITAL DYNAMICS</span><span>NORTHSTAR LABS</span><span>FERROX</span><span>DELTA-V</span><span>QUANTA</span><span>HELIX SYSTEMS</span><span>VANTAGE</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= REGISTER / CTA ================= -->
+    <section class="register" id="register">
+      <div class="wrap register-inner">
+        <div class="register-copy">
+          <p class="section-tag light">06 · Clearance</p>
+          <h2>Passes are moving faster than last year.</h2>
+          <p>Get campus access, entry to every guest session, and a slot in as many competitions as you can physically attend. Team passes available for hackathon and robotics squads.</p>
+        </div>
+
+        <form class="register-form" id="registerForm">
+          <div class="field">
+            <label for="fname">Full name</label>
+            <input type="text" id="fname" name="fname" placeholder="Your name" required>
+          </div>
+          <div class="field">
+            <label for="femail">Email</label>
+            <input type="email" id="femail" name="femail" placeholder="you@college.edu" required>
+          </div>
+          <div class="field">
+            <label for="fpass">Pass type</label>
+            <select id="fpass" name="fpass">
+              <option value="explorer">Explorer — campus + talks</option>
+              <option value="builder">Builder — + competitions</option>
+              <option value="squad">Squad — team of 4, hackathon</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Confirm registration</button>
+          <p class="form-note" id="formNote">No payment happens on this page — it's a demo build.</p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark">TECHFEST</span>
+        <p>IIT Bombay, Powai, Mumbai · Organised by students, for anyone who builds things.</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4>Explore</h4>
+          <a href="#events">Events</a>
+          <a href="#schedule">Schedule</a>
+          <a href="#speakers">Guests</a>
+        </div>
+        <div>
+          <h4>Festival</h4>
+          <a href="#about">About</a>
+          <a href="#sponsors">Partners</a>
+          <a href="#register">Passes</a>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <a href="#">Instagram</a>
+          <a href="#">X / Twitter</a>
+          <a href="#">contact@techfest.org</a>
+        </div>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <span>© <span id="year"></span> Techfest. Concept build for demo purposes.</span>
+      <span class="footer-status"><span class="dot pulse small"></span> all systems nominal</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

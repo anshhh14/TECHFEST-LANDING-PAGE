@@ -12,7 +12,7 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-f7df1e?style=for-the-badge&logo=javascript&logoColor=black)
 ![No Build Tools](https://img.shields.io/badge/build%20tools-none-52d8c9?style=for-the-badge)
 
-**[▶ Live Demo](#)** · **[Report an Issue](#)** · **[Design Notes](#-design-notes)**
+   **[▶ Live Demo](https://anshhh14.github.io/TECHFEST-LANDING-PAGE/)** · **[Report an Issue](https://github.com/anshhh14/TECHFEST-LANDING-PAGE/issues)** · **[Design Notes](#-design-notes)**
 
 </div>
 

@@ -1,48 +1,155 @@
-# Techfest — Landing Page Concept
+<div align="center">
 
-A concept landing page for Techfest, designed around a "mission control"
-idea — the festival as a launch, with a live countdown console and
-telemetry-style stats instead of the usual hero banner + stock photo grid.
+# ⌁ TECHFEST — LANDING PAGE
 
-## Structure
+### `// mission_control.log`
+
+**A concept landing page for Techfest, built around one idea:**
+**the festival as a launch, not a poster.**
+
+![HTML5](https://img.shields.io/badge/HTML5-e34f26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572b6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-f7df1e?style=for-the-badge&logo=javascript&logoColor=black)
+![No Build Tools](https://img.shields.io/badge/build%20tools-none-52d8c9?style=for-the-badge)
+
+**[▶ Live Demo](#)** · **[Report an Issue](#)** · **[Design Notes](#-design-notes)**
+
+</div>
+
+<br>
+
+<div align="center">
+
+```
+STATUS: SYSTEMS NOMINAL          T-MINUS COUNTDOWN ACTIVE
+EVENTS: 150+                     FOOTFALL: 180,000+
+```
+
+</div>
+
+---
+
+## ⌁ What this is
+
+A single-page concept site for Techfest — dark "mission console" hero with a
+**live countdown clock**, animated telemetry stats, a 2D canvas starfield,
+and section-by-section reveals as you scroll. No frameworks, no build step,
+no dependencies beyond two Google Fonts.
+
+| | |
+|---|---|
+| 🚀 **Hero** | Live countdown to opening day + animated stat counters |
+| 🛰️ **Events** | Six "system modules" — Robotics, Hackathon, Astronomy, Design Sprint, Esports, Rocketry |
+| 🗓️ **Schedule** | Three-day flight plan, laid out as a timeline |
+| 🎙️ **Guests** | Speaker roster with console-styled cards |
+| 🤝 **Partners** | Auto-scrolling sponsor marquee |
+| 📝 **Register** | Demo pass-registration form |
+
+---
+
+## ⌁ Stack
+
+No framework. No bundler. No `node_modules`. Just three files and a browser.
+
+```
+HTML5   —  semantic markup
+CSS3    —  custom properties, grid, clamp(), zero utility framework
+Vanilla JS — countdown timer, canvas starfield, IntersectionObserver reveals
+```
+
+---
+
+## ⌁ Folder structure
 
 ```
 techfest-landing/
-├── index.html        page markup
-├── css/style.css      design system + layout
-├── js/main.js          countdown, starfield canvas, scroll reveals, counters
+├── index.html          → page markup
+├── css/
+│   └── style.css        → design system + layout + responsive rules
+├── js/
+│   └── main.js           → countdown, starfield, scroll reveals, counters
 └── README.md
 ```
 
-No build step, no dependencies beyond Google Fonts. Just open `index.html`
-in a browser, or serve the folder with anything static (`npx serve`,
-`python3 -m http.server`, GitHub Pages, Netlify drop, etc).
+---
 
-## Design notes
+## ⌁ Run it locally
 
-- **Palette** — deep navy hull (`#0a0f1c`) with amber (`#ffb13d`) as the
-  primary signal color and cyan (`#52d8c9`) as the secondary one. Read
-  as instrument-panel lighting rather than a generic dark-mode gradient.
-- **Type** — Space Grotesk for display headings, IBM Plex Sans for body
-  copy, IBM Plex Mono for anything that reads like data (the countdown,
-  stat labels, section tags).
-- **Signature element** — the console panel in the hero: a live countdown
-  to opening day plus four animated telemetry stats (events, footfall,
-  countries, prize pool) that count up when scrolled into view.
-- Numbered "SYS/01–06" tags on the event cards and the Day 1/2/3 timeline
-  are both genuinely sequential content, not decoration.
+No install, no build. Pick whichever you've got:
 
-## Things to swap before this goes live
+<table>
+<tr><td>
 
-- `LAUNCH_DATE` in `js/main.js` — set to the real opening ceremony date/time.
-- Copy throughout is placeholder (speaker names, event descriptions,
-  sponsor names) — replace with the real lineup.
-- The register form doesn't submit anywhere; wire it to whatever backend
-  or form service you're using and remove the "demo build" note.
-- Swap the inline SVG icons for real event photography once you have it,
-  if you want a less illustrated look.
+**Just open it**
+```bash
+open index.html
+```
 
-## Browser support
+</td><td>
 
-Modern evergreen browsers. Respects `prefers-reduced-motion` for the
-starfield, scan line, and scroll reveals.
+**Python**
+```bash
+python -m http.server 8000
+```
+
+</td><td>
+
+**Node**
+```bash
+npx serve
+```
+
+</td></tr>
+</table>
+
+Then visit `http://localhost:8000` (or whichever port your tool prints).
+
+> Prefer VS Code? Install the **Live Server** extension → right-click
+> `index.html` → *Open with Live Server*. Auto-reloads on save.
+
+---
+
+## ⌁ Design notes
+
+**Direction.** Most AI-styled dark pages land on the same three looks —
+warm cream + serif, black + neon accent, or a broadsheet grid. This one
+takes a different reference point: an actual **instrument panel**. Amber
+for primary signal, cyan for secondary, monospace type wherever something
+reads like data instead of prose.
+
+| Token | Value | Role |
+|---|---|---|
+| `--bg` | `#0a0f1c` | hull / base background |
+| `--amber` | `#ffb13d` | primary signal, CTAs |
+| `--cyan` | `#52d8c9` | secondary signal, links |
+| `--display` | Space Grotesk | headings |
+| `--body` | IBM Plex Sans | body copy |
+| `--mono` | IBM Plex Mono | countdown, labels, stats |
+
+**Signature element.** The console panel in the hero — a live countdown to
+opening day, with telemetry stats that count up once they scroll into view.
+It's the one thing this page is built around; everything else stays quiet
+so that panel does the talking.
+
+**What's genuinely sequential vs. decorative.** The `SYS/01–06` tags on
+event cards and the `Day 1 / 2 / 3` timeline markers are real ordering —
+not numbering for numbering's sake.
+
+---
+
+## ⌁ Before this goes live
+
+- [ ] Set the real opening-ceremony date in `LAUNCH_DATE` (`js/main.js`)
+- [ ] Swap placeholder speaker names, event copy, and sponsor names for the real lineup
+- [ ] Wire the register form to an actual backend or form service
+- [ ] Swap inline SVG icons for real event photography, if preferred
+
+---
+
+<div align="center">
+
+**Browser support:** modern evergreen browsers · respects `prefers-reduced-motion`
+
+<sub>Concept build for demo purposes — not an official Techfest / IIT Bombay property.</sub>
+
+</div>
